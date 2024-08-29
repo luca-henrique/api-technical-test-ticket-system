@@ -1,3 +1,7 @@
+## Dicas
+
+https://www.youtube.com/watch?v=0TMr8rsmU-k
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
