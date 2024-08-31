@@ -1,18 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
-import { PrismaService } from 'src/database/prisma.service';
+import { Body, Controller, Post } from '@nestjs/common';
+import { Ticket, TicketService } from './ticket.service';
 
 @Controller('ticket')
 export class TicketController {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly ticketService: TicketService) {}
 
-  @Get()
-  async getHello() {
-    await this.prisma.event.create({
-      data: { title: '', description: '', price: 10, category: '' },
-    });
-
-    return {
-      message: 'Create',
-    };
+  @Post()
+  buyTicketByUserId(@Body() ticket: Ticket) {
+    console.log(ticket);
+    return this.ticketService.buyTicketByUserId(ticket);
   }
 }
