@@ -2,4 +2,12 @@ config:
   target: 'http://localhost:3000'
   phases:
     - duration: 10
-      arrivalRate: 20
+      arrivalRate: 120
+scenarios:
+  - flow:
+      - post:
+          url: '/ticket'
+          json:
+            count: 1
+            user_id: 1
+            event_id: 2

@@ -12,4 +12,6 @@ model Ticket {
   user_id  Int
   event_id Int
   count    Int
+
+  @@map("ticket")
 }
