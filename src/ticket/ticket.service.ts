@@ -15,4 +15,8 @@ export class TicketService {
   async buyTicketByUserId(ticket: Ticket) {
     return this.prisma.prismaClient.ticket.create({ data: ticket });
   }
+
+  async listAllTickets() {
+    return this.prisma.prismaClient.ticket.findMany();
+  }
 }
